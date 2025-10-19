@@ -25,9 +25,11 @@ export default function ProfileScreen() {
         
         <Button
           size="$4"
-          backgroundColor="$red10"
+          backgroundColor="$red8"
           color="white"
           onPress={logout}
+          hoverStyle={{ backgroundColor: '$red9' }}
+          pressStyle={{ backgroundColor: '$red10' }}
         >
           Sign Out
         </Button>

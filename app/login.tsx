@@ -27,7 +27,7 @@ export default function LoginScreen() {
         <Text fontSize="$8" fontWeight="bold" color="$color" textAlign="center">
           Professional Identity
         </Text>
-        <Text fontSize="$4" color="$color" textAlign="center" opacity={0.7}>
+        <Text fontSize="$4" color="$colorTransparent" textAlign="center">
           Sign in to continue
         </Text>
         
@@ -41,20 +41,22 @@ export default function LoginScreen() {
             onChangeText={setUsername}
             style={{
               borderWidth: 1,
-              borderColor: '#e0e0e0',
+              borderColor: '#d9c2ff',
               borderRadius: 8,
               padding: 12,
               fontSize: 16,
-              backgroundColor: '#ffffff',
-              color: '#000000',
+              backgroundColor: '#f0e8ff',
+              color: '#2e2e2e',
+              width: '100%',
             }}
+            placeholderTextColor="#757575"
             editable={!loading}
           />
         </Stack>
         
         <Button
           size="$4"
-          backgroundColor="$blue10"
+          backgroundColor="$purple8"
           color="white"
           fontWeight="600"
           onPress={handleLogin}
@@ -62,6 +64,12 @@ export default function LoginScreen() {
           opacity={loading ? 0.7 : 1}
           icon={loading ? <ActivityIndicator size="small" color="white" /> : undefined}
           width="100%"
+          hoverStyle={{
+            backgroundColor: '$purple9',
+          }}
+          pressStyle={{
+            backgroundColor: '$purple10',
+          }}
         >
           {loading ? 'Signing in...' : 'Jump in!'}
         </Button>
