@@ -7,7 +7,7 @@
 import { Button } from '@tamagui/button';
 import { Card } from '@tamagui/card';
 import { Stack, Text } from '@tamagui/core';
-import { Dumbbell, User, UserCheck } from '@tamagui/lucide-icons';
+import { Dumbbell, PersonStanding, User, UserCheck } from '@tamagui/lucide-icons';
 import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
@@ -68,8 +68,7 @@ export default function ClientsScreen() {
    * Generates a random color with transparency
    */
   const getRandomColor = (clientId: string) => {
-    const colors = [
-      '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', 
+    const colors = [ 
       '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9',
       '#F8C471', '#82E0AA', '#F1948A', '#85C1E9', '#D7BDE2'
     ];
@@ -98,17 +97,17 @@ export default function ClientsScreen() {
       {/* Header Section */}
       <Stack padding="$4" paddingTop="$6" backgroundColor="$blue1" borderBottomLeftRadius="$4" borderBottomRightRadius="$4">
         <Stack space="$3" alignItems="center">
-          <Text fontSize="$9" fontWeight="bold" color="$blue12" textAlign="center">
+          <Text fontSize="$5" fontWeight="bold" color="$blue12" textAlign="center">
             My Clients
           </Text>
-          <Text fontSize="$5" color="$blue10" textAlign="center" lineHeight="$6">
+          <Text fontSize="$3" color="$blue10" textAlign="center" lineHeight="$6">
             Track your clients' fitness journey and workout progress
           </Text>
         </Stack>
       </Stack>
 
       {/* Content Section */}
-      <Stack flex={1} padding="$4">
+      <Stack flex={1} padding="$4" backgroundColor="$gray1">
         {/* Error Display */}
         {error && (
           <Card padding="$3" backgroundColor="$red2" borderColor="$red6" marginBottom="$4">
@@ -131,12 +130,7 @@ export default function ClientsScreen() {
                   backgroundColor={getBackgroundColor(client.id)}
                   borderColor={getBorderColor(client.id)}
                   borderWidth={2}
-                  borderRadius="$4"
-                  shadowColor="$shadowColor"
-                  shadowOffset={{ width: 0, height: 2 }}
-                  shadowOpacity={0.1}
-                  shadowRadius={4}
-                  elevation={2}
+                  borderRadius="$8"
                 >
                   <Stack space="$4" alignItems="center" justifyContent="space-between" flexDirection="row">
                     {/* Left side - Gender icon and client info */}
@@ -150,17 +144,17 @@ export default function ClientsScreen() {
                         justifyContent="center" 
                         alignItems="center"
                         borderWidth={1}
-                        borderColor="$gray4"
+                        borderColor="$borderColor"
                       >
-                        <GenderIcon size={24} color={getRandomColor(client.id)} />
+                        <PersonStanding size={24} color={getRandomColor(client.id)} />
                       </Stack>
 
                       {/* Client Information */}
                       <Stack space="$1" flex={1}>
-                        <Text fontSize="$5" fontWeight="600" color="$gray12">
+                        <Text fontSize="$4" fontWeight="600" color="$gray10">
                           {client.name}
                         </Text>
-                        <Text fontSize="$3" color="$gray10">
+                        <Text fontSize="$2.5" color="$gray7">
                           Last time checked: {client.lastChecked}
                         </Text>
                       </Stack>
@@ -169,12 +163,19 @@ export default function ClientsScreen() {
                     {/* Right side - Workout button */}
                     <Button
                       size="$3"
-                      backgroundColor="transparent"
+                      // backgroundColor="transparent"
+                      shadowColor="$shadowColor"
+                      shadowOffset={{ width: 0, height: 2 }}
+                      shadowOpacity={0.1}
+                      shadowRadius={4}
+                      elevation={2}
                       borderWidth={2}
                       borderColor={getBorderColor(client.id)}
                       borderRadius="$6"
                       paddingHorizontal="$3"
                       paddingVertical="$2"
+                      height={40}
+                      width={40}
                       onPress={() => handleClientPress(client)}
                       hoverStyle={{ 
                         backgroundColor: getBackgroundColor(client.id),
