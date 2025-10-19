@@ -1,0 +1,25 @@
+{
+  "user": {
+    "id": "user-001",
+    "username": "john_doe",
+    "name": "John Doe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@email.com",
+    "phone": "+1234567890",
+    "profileImage": null,
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastLoginAt": "2024-01-15T10:30:00Z",
+    "preferences": {
+      "theme": "light",
+      "notifications": true,
+      "language": "en"
+    },
+    "profile": {
+      "bio": "Professional fitness trainer with 5+ years of experience",
+      "specialization": "Strength Training & Cardio",
+      "certifications": ["NASM-CPT", "ACSM-CPT"],
+      "experience": "5 years"
+    }
+  }
+}
