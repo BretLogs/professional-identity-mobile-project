@@ -19,8 +19,20 @@ export default function RootLayout() {
           <Stack>
             <Stack.Screen name="login" options={{ headerShown: false }} />
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen 
+              name="client-detail" 
+              options={{ 
+                headerShown: true,
+                title: '',
+                headerTintColor: '#8c52ff',
+                headerTitleStyle: {
+                  fontWeight: 'bold',
+                },
+                headerTransparent: true,
+              }} 
+            />
           </Stack>
-          <StatusBar style="auto" />
+          <StatusBar style="light" />
         </ClientStoreProvider>
       </AuthStoreProvider>
     </TamaguiProvider>

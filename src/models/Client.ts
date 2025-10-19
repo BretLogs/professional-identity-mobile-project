@@ -9,6 +9,12 @@ export interface Client {
   readonly email: string;
   readonly phone?: string;
   readonly company?: string;
+  readonly gender: 'male' | 'female';
+  readonly weight: string;
+  readonly height: string;
+  readonly description: string;
+  readonly lastChecked: string;
+  readonly lastCheckedDate: string;
   readonly createdAt: Date;
   readonly lastContactAt?: Date;
   readonly status: ClientStatus;
@@ -37,6 +43,10 @@ export class ClientFactory {
     id: string,
     name: string,
     email: string,
+    gender: 'male' | 'female',
+    weight: string,
+    height: string,
+    description: string,
     phone?: string,
     company?: string
   ): Client {
@@ -46,6 +56,12 @@ export class ClientFactory {
       email,
       phone,
       company,
+      gender,
+      weight,
+      height,
+      description,
+      lastChecked: 'today',
+      lastCheckedDate: new Date().toISOString().split('T')[0],
       createdAt: new Date(),
       status: ClientStatus.PROSPECT,
     };

@@ -1,0 +1,88 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@email.com",
+      "phone": "+1234567890",
+      "gender": "female",
+      "weight": "65kg",
+      "height": "170cm",
+      "description": "Focused on strength training and cardio. Very dedicated to her fitness goals.",
+      "lastChecked": "today",
+      "lastCheckedDate": "2024-01-15",
+      "status": "active",
+      "createdAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": "2", 
+      "name": "Michael Chen",
+      "email": "michael.chen@email.com",
+      "phone": "+1234567891",
+      "gender": "male",
+      "weight": "80kg",
+      "height": "180cm",
+      "description": "Bodybuilding enthusiast with focus on muscle mass and strength gains.",
+      "lastChecked": "yesterday",
+      "lastCheckedDate": "2024-01-14",
+      "status": "active",
+      "createdAt": "2024-01-02T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Emma Rodriguez",
+      "email": "emma.rodriguez@email.com", 
+      "phone": "+1234567892",
+      "gender": "female",
+      "weight": "58kg",
+      "height": "165cm",
+      "description": "Yoga and pilates practitioner. Interested in flexibility and core strength.",
+      "lastChecked": "2024-01-10",
+      "lastCheckedDate": "2024-01-10",
+      "status": "active",
+      "createdAt": "2024-01-03T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "David Wilson",
+      "email": "david.wilson@email.com",
+      "phone": "+1234567893", 
+      "gender": "male",
+      "weight": "75kg",
+      "height": "175cm",
+      "description": "CrossFit athlete training for competitions. High intensity workouts.",
+      "lastChecked": "2024-01-08",
+      "lastCheckedDate": "2024-01-08",
+      "status": "active",
+      "createdAt": "2024-01-04T00:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Lisa Thompson",
+      "email": "lisa.thompson@email.com",
+      "phone": "+1234567894",
+      "gender": "female", 
+      "weight": "62kg",
+      "height": "168cm",
+      "description": "Marathon runner training for upcoming races. Focus on endurance and stamina.",
+      "lastChecked": "2024-01-12",
+      "lastCheckedDate": "2024-01-12",
+      "status": "active",
+      "createdAt": "2024-01-05T00:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "James Anderson",
+      "email": "james.anderson@email.com",
+      "phone": "+1234567895",
+      "gender": "male",
+      "weight": "85kg", 
+      "height": "185cm",
+      "description": "Powerlifter with focus on squat, bench press, and deadlift. Strength training specialist.",
+      "lastChecked": "2024-01-13",
+      "lastCheckedDate": "2024-01-13",
+      "status": "active",
+      "createdAt": "2024-01-06T00:00:00Z"
+    }
+  ]
+}
