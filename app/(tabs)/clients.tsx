@@ -29,7 +29,9 @@ export default function ClientsScreen() {
   // Load mock clients data
   useEffect(() => {
     loadMockClients();
-  }, []);
+    // Also load clients into the store
+    loadClients();
+  }, [loadClients]);
 
   /**
    * Loads mock clients data from JSON file

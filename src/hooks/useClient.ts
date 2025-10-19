@@ -3,7 +3,7 @@
  * Following Clean Code principles with clear separation of concerns
  */
 
-import { ClientStatus } from '../models/Client';
+import { Client, ClientStatus } from '../models/Client';
 import { useClientStore } from '../stores/clientStore';
 
 /**
@@ -11,7 +11,7 @@ import { useClientStore } from '../stores/clientStore';
  * Provides clean interface to client state and actions
  */
 export const useClient = () => {
-  const { state, actions } = useClientStore();
+  const { state, setState } = useClientStore();
 
   return {
     // State
@@ -20,16 +20,41 @@ export const useClient = () => {
     isLoading: state.isLoading,
     error: state.error,
     filter: state.filter,
-    filteredClients: state.filter === 'all' ? state.clients : state.clients.filter(client => client.status === state.filter),
+    filteredClients: state.filter === 'all' ? state.clients : state.clients.filter((client: any) => client.status === state.filter),
 
     // Actions
-    loadClients: actions.loadClients,
-    createClient: actions.createClient,
-    updateClient: actions.updateClient,
-    deleteClient: actions.deleteClient,
-    selectClient: actions.selectClient,
-    setFilter: actions.setFilter,
-    clearError: actions.clearError,
+    loadClients: async () => {
+      try {
+        const clientsData = require('../data/clients.json');
+        const clientsWithDates = clientsData.clients.map((client: any) => ({
+          ...client,
+          createdAt: new Date(client.createdAt),
+          lastContactAt: client.lastCheckedDate ? new Date(client.lastCheckedDate) : undefined,
+        }));
+        setState({ clients: clientsWithDates as any, isLoading: false });
+      } catch (error) {
+        console.error('Error loading clients:', error);
+        setState({ error: 'Failed to load clients' as any, isLoading: false });
+      }
+    },
+    createClient: async (clientData: Omit<Client, 'id' | 'createdAt' | 'status'>) => {
+      console.log('Create client:', clientData);
+    },
+    updateClient: async (id: string, updates: Partial<Client>) => {
+      console.log('Update client:', id, updates);
+    },
+    deleteClient: async (id: string) => {
+      console.log('Delete client:', id);
+    },
+    selectClient: (client: Client | null) => {
+      setState({ selectedClient: client as any });
+    },
+    setFilter: (filter: ClientStatus | 'all') => {
+      setState({ filter });
+    },
+    clearError: () => {
+      setState({ error: null as any });
+    },
   };
 };
 
@@ -45,16 +70,16 @@ export const useClientExtended = () => {
     
     // Additional utilities
     getClientById: (id: string) => 
-      client.clients.find(c => c.id === id),
+      client.clients.find((c: any) => c.id === id),
     
     getClientsByStatus: (status: ClientStatus) => 
-      client.clients.filter(c => c.status === status),
+      client.clients.filter((c: any) => c.status === status),
     
     getActiveClients: () => 
-      client.clients.filter(c => c.status === ClientStatus.ACTIVE),
+      client.clients.filter((c: any) => c.status === ClientStatus.ACTIVE),
     
     getProspectClients: () => 
-      client.clients.filter(c => c.status === ClientStatus.PROSPECT),
+      client.clients.filter((c: any) => c.status === ClientStatus.PROSPECT),
     
     getClientCount: () => client.clients.length,
     
@@ -63,6 +88,6 @@ export const useClientExtended = () => {
     hasClients: () => client.clients.length > 0,
     
     isClientSelected: (clientId: string) => 
-      client.selectedClient?.id === clientId,
+      (client.selectedClient as any)?.id === clientId,
   };
 };

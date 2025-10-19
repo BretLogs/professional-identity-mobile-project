@@ -11,8 +11,12 @@ export * from './User';
 // Client related models
 export * from './Client';
 
+// Workout related models
+export * from './Workout';
+
 // Re-export commonly used types for convenience
 export type { AuthActions, AuthState, AuthStore } from './Auth';
 export type { Client, ClientProfile, ClientStatus } from './Client';
 export type { User } from './User';
+export type { ClientWorkouts, WorkoutData, WorkoutSession } from './Workout';
 

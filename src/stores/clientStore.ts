@@ -43,32 +43,16 @@ const initialClientState = {
   filter: 'all',
 };
 
-// Actions
+// Actions - these are just placeholders, actual implementation is in the hook
 const clientActions = {
-  loadClients: async () => {
-    console.log('Load clients');
-  },
-  selectClient: (client: Client | null) => {
-    console.log('Select client:', client);
-  },
-  createClient: async (clientData: Omit<Client, 'id' | 'createdAt' | 'status'>) => {
-    console.log('Create client:', clientData);
-  },
-  updateClient: async (id: string, updates: Partial<Client>) => {
-    console.log('Update client:', id, updates);
-  },
-  deleteClient: async (id: string) => {
-    console.log('Delete client:', id);
-  },
-  setFilter: (filter: ClientStatus | 'all') => {
-    console.log('Set filter:', filter);
-  },
-  clearError: () => {
-    console.log('Clear error');
-  },
-  setLoading: (loading: boolean) => {
-    console.log('Set loading:', loading);
-  },
+  loadClients: async () => {},
+  selectClient: (client: Client | null) => {},
+  createClient: async (clientData: Omit<Client, 'id' | 'createdAt' | 'status'>) => {},
+  updateClient: async (id: string, updates: Partial<Client>) => {},
+  deleteClient: async (id: string) => {},
+  setFilter: (filter: ClientStatus | 'all') => {},
+  clearError: () => {},
+  setLoading: (loading: boolean) => {},
 };
 
 const { StoreProvider: ClientStoreProvider, useStore: useClientStore } = createStore(

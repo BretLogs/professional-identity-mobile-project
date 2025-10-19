@@ -1,0 +1,118 @@
+{
+  "workouts": [
+    {
+      "clientId": "1",
+      "sessions": [
+        {
+          "id": "w1",
+          "day": "Monday",
+          "date": "2024-01-15",
+          "workouts": "• Warm-up: 10 minutes cardio\n• Squats: 3 sets x 12 reps\n• Deadlifts: 3 sets x 8 reps\n• Bench Press: 3 sets x 10 reps\n• Cool-down: 5 minutes stretching"
+        },
+        {
+          "id": "w2", 
+          "day": "Wednesday",
+          "date": "2024-01-17",
+          "workouts": "• Warm-up: 5 minutes jogging\n• Pull-ups: 3 sets x 8 reps\n• Rows: 3 sets x 12 reps\n• Shoulder Press: 3 sets x 10 reps\n• Planks: 3 sets x 30 seconds"
+        },
+        {
+          "id": "w3",
+          "day": "Friday", 
+          "date": "2024-01-19",
+          "workouts": "• Warm-up: 10 minutes cycling\n• Lunges: 3 sets x 15 reps each leg\n• Leg Press: 3 sets x 15 reps\n• Calf Raises: 3 sets x 20 reps\n• Cool-down: 10 minutes stretching"
+        }
+      ]
+    },
+    {
+      "clientId": "2",
+      "sessions": [
+        {
+          "id": "w4",
+          "day": "Tuesday",
+          "date": "2024-01-16", 
+          "workouts": "• Warm-up: 15 minutes cardio\n• Barbell Squats: 4 sets x 8 reps\n• Romanian Deadlifts: 4 sets x 10 reps\n• Overhead Press: 4 sets x 8 reps\n• Barbell Rows: 4 sets x 10 reps"
+        },
+        {
+          "id": "w5",
+          "day": "Thursday",
+          "date": "2024-01-18",
+          "workouts": "• Warm-up: 10 minutes rowing\n• Bench Press: 4 sets x 6 reps\n• Incline Press: 3 sets x 8 reps\n• Dips: 3 sets x 12 reps\n• Tricep Extensions: 3 sets x 15 reps"
+        }
+      ]
+    },
+    {
+      "clientId": "3",
+      "sessions": [
+        {
+          "id": "w6",
+          "day": "Monday",
+          "date": "2024-01-15",
+          "workouts": "• Yoga Flow: 45 minutes\n• Sun Salutations: 5 rounds\n• Warrior Poses: 3 sets each\n• Tree Pose: 2 minutes each side\n• Savasana: 10 minutes"
+        },
+        {
+          "id": "w7",
+          "day": "Wednesday", 
+          "date": "2024-01-17",
+          "workouts": "• Pilates Mat Work: 30 minutes\n• Core Strengthening: 20 minutes\n• Flexibility Stretches: 15 minutes\n• Breathing Exercises: 10 minutes"
+        }
+      ]
+    },
+    {
+      "clientId": "4",
+      "sessions": [
+        {
+          "id": "w8",
+          "day": "Monday",
+          "date": "2024-01-15",
+          "workouts": "• CrossFit WOD: 20 minutes\n• Burpees: 5 sets x 10 reps\n• Box Jumps: 4 sets x 15 reps\n• Kettlebell Swings: 4 sets x 20 reps\n• Rowing: 1000m for time"
+        },
+        {
+          "id": "w9",
+          "day": "Wednesday",
+          "date": "2024-01-17", 
+          "workouts": "• AMRAP 15 minutes:\n• 10 Pull-ups\n• 20 Push-ups\n• 30 Air Squats\n• 40 Sit-ups"
+        }
+      ]
+    },
+    {
+      "clientId": "5",
+      "sessions": [
+        {
+          "id": "w10",
+          "day": "Tuesday",
+          "date": "2024-01-16",
+          "workouts": "• Long Run: 10 miles\n• Pace: 8:30 per mile\n• Heart Rate Zone: 2-3\n• Hydration: Every 2 miles\n• Cool-down: 15 minutes walking"
+        },
+        {
+          "id": "w11",
+          "day": "Thursday",
+          "date": "2024-01-18",
+          "workouts": "• Interval Training: 45 minutes\n• 5 min warm-up\n• 8 x 2 min hard / 1 min easy\n• 5 min cool-down"
+        }
+      ]
+    },
+    {
+      "clientId": "6",
+      "sessions": [
+        {
+          "id": "w12",
+          "day": "Monday",
+          "date": "2024-01-15",
+          "workouts": "• Squat Day: Heavy\n• Back Squats: 5 sets x 5 reps\n• Front Squats: 4 sets x 8 reps\n• Bulgarian Split Squats: 3 sets x 12 reps each\n• Calf Raises: 4 sets x 15 reps"
+        },
+        {
+          "id": "w13",
+          "day": "Wednesday",
+          "date": "2024-01-17",
+          "workouts": "• Bench Press Day\n• Bench Press: 5 sets x 5 reps\n• Incline Press: 4 sets x 8 reps\n• Close Grip Bench: 3 sets x 10 reps\n• Tricep Dips: 3 sets x 12 reps"
+        },
+        {
+          "id": "w14",
+          "day": "Friday",
+          "date": "2024-01-19",
+          "workouts": "• Deadlift Day\n• Conventional Deadlifts: 5 sets x 3 reps\n• Romanian Deadlifts: 4 sets x 8 reps\n• Barbell Rows: 4 sets x 10 reps\n• Face Pulls: 3 sets x 15 reps"
+        }
+      ]
+    }
+  ]
+}

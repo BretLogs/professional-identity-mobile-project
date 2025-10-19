@@ -10,6 +10,9 @@ export * from './AuthService';
 // Client services
 export * from './ClientService';
 
+// Workout services
+export * from './WorkoutService';
+
 // Re-export commonly used types for convenience
 export type { AuthResult, IAuthService } from '../models/Auth';
 export type { ClientResult, IClientService } from './ClientService';

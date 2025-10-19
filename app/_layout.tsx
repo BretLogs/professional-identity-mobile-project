@@ -22,7 +22,7 @@ export default function RootLayout() {
             <Stack.Screen 
               name="client-detail" 
               options={{ 
-                headerShown: true,
+                headerShown: false,
                 title: '',
                 headerTintColor: '#8c52ff',
                 headerTitleStyle: {
