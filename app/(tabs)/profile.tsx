@@ -1,9 +1,15 @@
 import { Button } from '@tamagui/button';
 import { Stack, Text } from '@tamagui/core';
-import { useAuth } from '../../src/contexts/AuthContext';
+import { useAuth } from '../../src/hooks/useAuth';
+
+/**
+ * Profile Screen Component
+ * Displays user profile information and logout functionality
+ * Following Clean Code principles with clear separation of concerns
+ */
 
 export default function ProfileScreen() {
-  const { user, logout } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <Stack flex={1} justifyContent="center" alignItems="center" backgroundColor="$background" padding="$4">
@@ -27,7 +33,7 @@ export default function ProfileScreen() {
           size="$4"
           backgroundColor="$red8"
           color="white"
-          onPress={logout}
+          onPress={signOut}
           hoverStyle={{ backgroundColor: '$red9' }}
           pressStyle={{ backgroundColor: '$red10' }}
         >

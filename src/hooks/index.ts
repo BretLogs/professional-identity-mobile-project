@@ -1,7 +1,16 @@
-// Hooks - Custom React hooks
-// Export all custom hooks here
+/**
+ * Hooks - Custom React hooks for state management
+ * Central export point for all custom hooks
+ * Following Clean Code principles with clear organization
+ */
 
-// TODO: Add hook exports when files are created
-// export * from './useAuth';
-// export * from './useProfile';
+// Authentication hooks
+export * from './useAuth';
+
+// Client hooks
+export * from './useClient';
+
+// Re-export commonly used hooks for convenience
+export { useAuth, useAuthExtended } from './useAuth';
+export { useClient, useClientExtended } from './useClient';
 

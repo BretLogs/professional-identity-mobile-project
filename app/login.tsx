@@ -4,22 +4,44 @@ import { Redirect } from 'expo-router';
 import React, { useState } from 'react';
 import { ActivityIndicator, Image, KeyboardAvoidingView, Platform, TextInput } from 'react-native';
 import landingPageImg from '../assets/images/landing_page_img.png';
-import { useAuth } from '../src/contexts/AuthContext';
+import { useAuth } from '../src/hooks/useAuth';
+
+/**
+ * Login Screen Component
+ * Handles user authentication
+ * Following Clean Code principles with clear separation of concerns
+ */
 
 export default function LoginScreen() {
-  const { signInWithUsername, loading, user } = useAuth();
+  const { signIn, isLoading, isAuthenticated, error, clearError } = useAuth();
   const [username, setUsername] = useState('');
 
   // Redirect to dashboard if user is already authenticated
-  if (user) {
+  if (isAuthenticated) {
     return <Redirect href="/(tabs)/dashboard" />;
   }
 
+  /**
+   * Handles login form submission
+   * Validates input and attempts authentication
+   */
   const handleLogin = async () => {
-    // Always proceed to dashboard - frontend-only authentication
-    console.log('Login button pressed, username:', username);
-    await signInWithUsername(username.trim());
-    console.log('Authentication completed');
+    // Clear any previous errors
+    clearError();
+    
+    // Validate username
+    if (!username.trim()) {
+      return;
+    }
+
+    // Attempt authentication
+    const success = await signIn(username.trim());
+    
+    if (success) {
+      console.log('Authentication successful');
+    } else {
+      console.log('Authentication failed');
+    }
   };
 
   return (
@@ -84,7 +106,7 @@ export default function LoginScreen() {
                 elevation: 5,
               }}
               placeholderTextColor="#757575"
-              editable={!loading}
+              editable={!isLoading}
             />
           </Stack>
           
@@ -95,9 +117,9 @@ export default function LoginScreen() {
             fontWeight="600"
             borderRadius="$8"
             onPress={handleLogin}
-            disabled={loading}
-            opacity={loading ? 0.7 : 1}
-            icon={loading ? <ActivityIndicator size="small" color="white" /> : undefined}
+            disabled={isLoading}
+            opacity={isLoading ? 0.7 : 1}
+            icon={isLoading ? <ActivityIndicator size="small" color="white" /> : undefined}
             width="100%"
             shadowColor="#000"
             shadowOffset={{ width: 0, height: 2 }}
@@ -110,7 +132,7 @@ export default function LoginScreen() {
               backgroundColor: '$purple10',
             }}
           >
-            {loading ? 'Signing in...' : 'Jump in!'}
+            {isLoading ? 'Signing in...' : 'Jump in!'}
           </Button>
         </Stack>
       </KeyboardAvoidingView>

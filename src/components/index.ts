@@ -1,7 +1,15 @@
-// Components - Reusable UI components
-// Export all components here
+/**
+ * Components - Reusable UI components
+ * Central export point for all components
+ * Following Clean Code principles with clear organization
+ */
 
-// TODO: Add component exports when files are created
-// export * from './common';
-// export * from './ui';
+// Common components
+export * from './common';
+
+// UI components
+export * from './ui';
+
+// Authentication components
+export { default as AuthWrapper } from './AuthWrapper';
 

@@ -1,5 +1,8 @@
-// API Services - External API calls
-// Export all API service functions here
+/**
+ * API Services - External API calls
+ * Central export point for all API service functions
+ * Following Clean Code principles with clear organization
+ */
 
 // TODO: Add API service exports when files are created
 // export * from './AuthAPI';

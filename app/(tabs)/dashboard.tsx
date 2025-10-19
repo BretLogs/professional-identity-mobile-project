@@ -1,11 +1,28 @@
+/**
+ * Dashboard Screen Component
+ * Displays professional identity and performance metrics
+ * Following Clean Code principles with clear separation of concerns
+ */
+
 import { Button } from '@tamagui/button';
 import { Card } from '@tamagui/card';
 import { Stack, Text } from '@tamagui/core';
 import { Input } from '@tamagui/input';
 import { Copy, Facebook, Globe, Instagram, TrendingUp, Users } from '@tamagui/lucide-icons';
+import { useEffect } from 'react';
 import { ScrollView } from 'react-native';
+import { useAuth } from '../../src/hooks/useAuth';
+import { useClient } from '../../src/hooks/useClient';
 
 export default function DashboardScreen() {
+  const { user } = useAuth();
+  const { clients, loadClients } = useClient();
+
+  // Load clients on component mount
+  useEffect(() => {
+    loadClients();
+  }, []);
+
   return (
     <ScrollView 
       style={{ flex: 1, backgroundColor: '#f8f5ff' }} 
@@ -194,7 +211,7 @@ export default function DashboardScreen() {
               <Text fontSize="$4" color="$colorTransparent" textAlign="center" fontWeight="500">
                 Total Clients
               </Text>
-              <Text fontSize="$7" fontWeight="bold" color="$purple8">1,234</Text>
+              <Text fontSize="$7" fontWeight="bold" color="$purple8">{clients.length}</Text>
               <Stack flexDirection="row" alignItems="center" space="$2">
                 <TrendingUp size="$1" color="$green8" />
                 <Text fontSize="$2" color="$green8" fontWeight="600">

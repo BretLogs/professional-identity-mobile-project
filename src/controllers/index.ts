@@ -1,7 +1,16 @@
-// Controllers - Business logic and state management
-// Export all controller functions here
+/**
+ * Controllers - Business logic and state management
+ * Central export point for all controller classes
+ * Following Clean Code principles with clear organization
+ */
 
-// TODO: Add controller exports when files are created
-// export * from './ProfileController';
-// export * from './UserController';
+// Authentication controller
+export * from './AuthController';
+
+// Client controller
+export * from './ClientController';
+
+// Re-export commonly used controllers for convenience
+export { authController } from './AuthController';
+export { clientController } from './ClientController';
 

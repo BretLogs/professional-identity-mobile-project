@@ -1,7 +1,16 @@
-// Services - External API calls and data management
-// Export all service functions here
+/**
+ * Services - Business logic and external API calls
+ * Central export point for all service classes and interfaces
+ * Following Clean Code principles with clear organization
+ */
 
-// TODO: Add service exports when files are created
-// export * from './api';
-// export * from './storage';
+// Authentication services
+export * from './AuthService';
+
+// Client services
+export * from './ClientService';
+
+// Re-export commonly used types for convenience
+export type { AuthResult, IAuthService } from '../models/Auth';
+export type { ClientResult, IClientService } from './ClientService';
 
