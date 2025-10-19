@@ -1,50 +1,102 @@
-# Welcome to your Expo app 👋
+# Professional Identity Mobile Project
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native/Expo mobile application built with MVC architecture for professional identity management.
 
-## Get started
+## Project Structure
 
-1. Install dependencies
+This project follows the Model-View-Controller (MVC) architectural pattern for better code organization and maintainability.
 
+```
+src/
+├── models/           # Data models and business logic
+├── views/            # UI components and screens
+├── controllers/      # Business logic and state management
+├── services/         # External API calls and data management
+│   ├── api/         # API service functions
+│   └── storage/     # Local storage services
+├── components/       # Reusable UI components
+│   ├── ui/          # Basic UI components
+│   └── common/      # Shared components
+├── constants/        # Application constants
+├── hooks/           # Custom React hooks
+├── types/           # TypeScript type definitions
+└── utils/           # Utility functions
+```
+
+## Architecture Overview
+
+### Models (`src/models/`)
+- Define data structures and business logic
+- Handle data validation and transformation
+- Export: `User`, `Profile`, etc.
+
+### Views (`src/views/`)
+- UI components and screens
+- Present data to users
+- Handle user interactions
+- Export: `HomeScreen`, `ProfileScreen`, etc.
+
+### Controllers (`src/controllers/`)
+- Business logic and state management
+- Coordinate between models and views
+- Handle application flow
+- Export: `UserController`, `ProfileController`, etc.
+
+### Services (`src/services/`)
+- External API calls and data management
+- Handle data persistence
+- Manage external integrations
+- Export: API services, storage services
+
+### Components (`src/components/`)
+- Reusable UI components
+- UI components (`src/components/ui/`)
+- Common components (`src/components/common/`)
+
+### Constants (`src/constants/`)
+- Application constants and configuration
+- Colors, dimensions, API endpoints
+
+### Hooks (`src/hooks/`)
+- Custom React hooks
+- Shared state logic
+- Reusable component logic
+
+### Types (`src/types/`)
+- TypeScript type definitions
+- Interface definitions
+- Type exports
+
+### Utils (`src/utils/`)
+- Utility functions and helpers
+- Formatters, validators, helpers
+
+## Getting Started
+
+1. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. Start the development server:
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Development Guidelines
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Follow the MVC pattern for new features
+- Place components in appropriate directories
+- Use TypeScript for type safety
+- Export components through index files
+- Keep business logic in controllers
+- Keep UI logic in views
+- Keep data logic in models
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Technologies Used
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- React Native
+- Expo
+- TypeScript
+- Tamagui (UI library)
+- Expo Router (navigation)
