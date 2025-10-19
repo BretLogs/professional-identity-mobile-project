@@ -7,7 +7,7 @@
 import { Button } from '@tamagui/button';
 import { Card } from '@tamagui/card';
 import { Stack, Text } from '@tamagui/core';
-import { ChevronDown, Copy, Edit3, FileText, Mail, Ruler, User, UserCheck, Weight } from '@tamagui/lucide-icons';
+import { ArrowLeft, ChevronDown, Copy, Edit3, FileText, Mail, Ruler, User, UserCheck, Weight } from '@tamagui/lucide-icons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Alert, Image, ScrollView } from 'react-native';
@@ -159,6 +159,22 @@ export default function ClientDetailScreen() {
           borderBottomLeftRadius="$6"
           borderBottomRightRadius="$6"
         >
+          {/* Back Button */}
+          <Stack position="absolute" top={insets.top + 16} left="$4" zIndex={10}>
+            <Button
+              size="$3"
+              backgroundColor="rgba(255, 255, 255, 0.2)"
+              borderRadius="$12"
+              width={40}
+              height={40}
+              onPress={() => router.back()}
+              hoverStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
+              pressStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}
+            >
+              <ArrowLeft size={20} color="white" />
+            </Button>
+          </Stack>
+
           <Stack space="$4" alignItems="center">
             {/* Gender Icon */}
             <Stack 
@@ -217,23 +233,21 @@ export default function ClientDetailScreen() {
           <Stack backgroundColor="$gray2" borderBottomWidth={1} borderBottomColor="$gray4" flexDirection="row">
             <Button
               flex={1}
-              backgroundColor={activeTab === 'client' ? primaryColor : 'transparent'}
+              borderBottomColor={activeTab === 'client' ? primaryColor : 'transparent'}
               borderRadius={0}
               onPress={() => setActiveTab('client')}
-              padding="$4"
             >
-              <Text color={activeTab === 'client' ? 'white' : '$gray11'} fontWeight="600">
+              <Text color={activeTab === 'client' ? primaryColor : '$gray6'} fontWeight="600">
                 Client
               </Text>
             </Button>
             <Button
               flex={1}
-              backgroundColor={activeTab === 'workouts' ? primaryColor : 'transparent'}
+              borderBottomColor={activeTab === 'workouts' ? primaryColor : 'transparent'}
               borderRadius={0}
               onPress={() => setActiveTab('workouts')}
-              padding="$4"
             >
-              <Text color={activeTab === 'workouts' ? 'white' : '$gray11'} fontWeight="600">
+              <Text color={activeTab === 'workouts' ? primaryColor : '$gray6'} fontWeight="600">
                 Workouts
               </Text>
             </Button>
@@ -244,10 +258,9 @@ export default function ClientDetailScreen() {
             <ScrollView style={{ flex: 1 }}>
               <Stack padding="$4" space="$4">
                 {/* Client Image */}
-                <Card padding="$4" backgroundColor={lightColor} borderColor={primaryColor}>
+                <Card padding="$4" borderColor={primaryColor}>
                   <Stack space="$3" alignItems="center">
                     <Text fontSize="$5" fontWeight="600" color="$gray12">
-                      Client Photo
                     </Text>
                     <Image 
                       source={imageSource}
@@ -265,10 +278,7 @@ export default function ClientDetailScreen() {
                 <Card padding="$4" backgroundColor="$gray1" borderColor="$gray3">
                   <Stack space="$3" alignItems="center" flexDirection="row">
                     <Mail size={20} color={primaryColor} />
-                    <Text fontSize="$4" color="$gray11" fontWeight="500">
-                      Email:
-                    </Text>
-                    <Text fontSize="$4" color="$gray12">
+                    <Text fontSize="$3.5" color="$gray12">
                       {client.email}
                     </Text>
                   </Stack>
@@ -281,10 +291,7 @@ export default function ClientDetailScreen() {
                       const GenderIcon = getGenderIcon(client.gender);
                       return <GenderIcon size={20} color={primaryColor} />;
                     })()}
-                    <Text fontSize="$4" color="$gray11" fontWeight="500">
-                      Gender:
-                    </Text>
-                    <Text fontSize="$4" color="$gray12" textTransform="capitalize">
+                    <Text fontSize="$3.5" color="$gray12" textTransform="capitalize">
                       {client.gender}
                     </Text>
                   </Stack>
@@ -295,19 +302,13 @@ export default function ClientDetailScreen() {
                   <Stack space="$3">
                     <Stack space="$3" alignItems="center" flexDirection="row">
                       <Weight size={20} color={primaryColor} />
-                      <Text fontSize="$4" color="$gray11" fontWeight="500">
-                        Weight:
-                      </Text>
-                      <Text fontSize="$4" color="$gray12">
+                      <Text fontSize="$3.5" color="$gray12">
                         {client.weight}
                       </Text>
                     </Stack>
                     <Stack space="$3" alignItems="center" flexDirection="row">
                       <Ruler size={20} color={primaryColor} />
-                      <Text fontSize="$4" color="$gray11" fontWeight="500">
-                        Height:
-                      </Text>
-                      <Text fontSize="$4" color="$gray12">
+                      <Text fontSize="$3.5" color="$gray12">
                         {client.height}
                       </Text>
                     </Stack>
@@ -319,11 +320,11 @@ export default function ClientDetailScreen() {
                   <Stack space="$3">
                     <Stack space="$3" alignItems="center" flexDirection="row">
                       <FileText size={20} color={primaryColor} />
-                      <Text fontSize="$5" fontWeight="600" color="$gray12">
+                      <Text fontSize="$4" fontWeight="600" color="$gray12">
                         About {client.name}
                       </Text>
                     </Stack>
-                    <Text fontSize="$4" color="$gray11" lineHeight="$6">
+                    <Text fontSize="$3" color="$gray11" lineHeight="$4">
                       {client.description}
                     </Text>
                   </Stack>
@@ -423,20 +424,6 @@ export default function ClientDetailScreen() {
           )}
         </Stack>
 
-        {/* Back Button */}
-        <Stack padding="$4" backgroundColor="$background">
-          <Button
-            size="$4"
-            backgroundColor="$gray6"
-            color="white"
-            fontWeight="600"
-            onPress={() => router.back()}
-            hoverStyle={{ backgroundColor: '$gray7' }}
-            pressStyle={{ backgroundColor: '$gray8' }}
-          >
-            Back to Clients
-          </Button>
-        </Stack>
       </Stack>
     </SafeAreaView>
   );
